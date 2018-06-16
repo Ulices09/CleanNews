@@ -18,6 +18,7 @@ class HeadlineListInteractor: HeadlineListBusinessLogic {
     var presenter: HeadlineListPresentationLogic!
     
     func fetchTopHeadlines(category: String, page: NSInteger) {
+        self.presenter.presentLoading()
         networkWorker.fetchTopHeadlines(category: category, page: page) { (articles, total, error) in
 
             if let articles = articles {

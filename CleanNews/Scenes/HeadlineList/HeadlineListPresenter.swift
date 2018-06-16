@@ -11,6 +11,7 @@ import Foundation
 protocol HeadlineListPresentationLogic: class {
     func presentTopHeadlines(_ articles: [Article], total: Int)
     func presentError(_ error: NSError)
+    func presentLoading()
 }
 
 class HeadlineListPresenter: HeadlineListPresentationLogic {
@@ -18,10 +19,15 @@ class HeadlineListPresenter: HeadlineListPresentationLogic {
     weak var viewController: HeadlineListDisplayLogic!
     
     func presentTopHeadlines(_ articles: [Article], total: Int) {
+        self.viewController.hideLoading()
         self.viewController.displayTopHeadlines(articles, total: total)
     }
     
     func presentError(_ error: NSError) {
         self.viewController.displayErrorMessage("Service Error")
+    }
+    
+    func presentLoading() {
+        self.viewController.displayLoading()
     }
 }

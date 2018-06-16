@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F3D576220D597F3003AC6E4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D576120D597F3003AC6E4 /* LoadingView.swift */; };
 		5F41E56C20D1D7CC00AB1B75 /* ArticleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F41E56B20D1D7CC00AB1B75 /* ArticleMapper.swift */; };
 		5F41E57020D20BD300AB1B75 /* HeadlineListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F41E56F20D20BD300AB1B75 /* HeadlineListInteractor.swift */; };
 		5F41E57220D2137400AB1B75 /* HeadlineListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F41E57120D2137400AB1B75 /* HeadlineListPresenter.swift */; };
+		5F473AAE20D55C550013D6AF /* Loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F473AAD20D55C550013D6AF /* Loading.json */; };
 		5F7F570520D0BA34005F86A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F570420D0BA34005F86A5 /* AppDelegate.swift */; };
 		5F7F570720D0BA34005F86A5 /* HeadlineListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F570620D0BA34005F86A5 /* HeadlineListVC.swift */; };
 		5F7F570A20D0BA34005F86A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F570820D0BA34005F86A5 /* Main.storyboard */; };
@@ -26,9 +28,11 @@
 /* Begin PBXFileReference section */
 		0BB804F1853E37648C4CDA67 /* Pods-CleanNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CleanNews/Pods-CleanNews.debug.xcconfig"; sourceTree = "<group>"; };
 		13E3ABBB5A1DD39A087E3EDE /* Pods-CleanNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanNews/Pods-CleanNews.release.xcconfig"; sourceTree = "<group>"; };
+		5F3D576120D597F3003AC6E4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5F41E56B20D1D7CC00AB1B75 /* ArticleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleMapper.swift; sourceTree = "<group>"; };
 		5F41E56F20D20BD300AB1B75 /* HeadlineListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListInteractor.swift; sourceTree = "<group>"; };
 		5F41E57120D2137400AB1B75 /* HeadlineListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListPresenter.swift; sourceTree = "<group>"; };
+		5F473AAD20D55C550013D6AF /* Loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loading.json; sourceTree = "<group>"; };
 		5F7F570120D0BA34005F86A5 /* CleanNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7F570420D0BA34005F86A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F7F570620D0BA34005F86A5 /* HeadlineListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListVC.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5F1686E820D58EFE001A9017 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				5F3D576120D597F3003AC6E4 /* LoadingView.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		5F41E56A20D1D79300AB1B75 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,7 @@
 		5F41E56D20D20B1500AB1B75 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5F843C4620D485A900813BAE /* Search */,
 				5F41E56E20D20B3900AB1B75 /* HeadlineList */,
 			);
 			path = Scenes;
@@ -97,6 +110,23 @@
 				5F41E57120D2137400AB1B75 /* HeadlineListPresenter.swift */,
 			);
 			path = HeadlineList;
+			sourceTree = "<group>";
+		};
+		5F473AAB20D55BE80013D6AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F1686E820D58EFE001A9017 /* Loader */,
+				5F473AAC20D55BF30013D6AF /* Animations */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5F473AAC20D55BF30013D6AF /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				5F473AAD20D55C550013D6AF /* Loading.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		5F7F56F820D0BA34005F86A5 = {
@@ -123,6 +153,7 @@
 				5F7F571620D0BB47005F86A5 /* Models */,
 				5F7F571B20D0BE03005F86A5 /* Workers */,
 				5F41E56D20D20B1500AB1B75 /* Scenes */,
+				5F473AAB20D55BE80013D6AF /* Views */,
 				5F7F570420D0BA34005F86A5 /* AppDelegate.swift */,
 				5F7F570820D0BA34005F86A5 /* Main.storyboard */,
 				5F7F570B20D0BA35005F86A5 /* Assets.xcassets */,
@@ -174,6 +205,13 @@
 				5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		5F843C4620D485A900813BAE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +277,7 @@
 				5F7F570F20D0BA35005F86A5 /* LaunchScreen.storyboard in Resources */,
 				5F7F570C20D0BA35005F86A5 /* Assets.xcassets in Resources */,
 				5F7F570A20D0BA34005F86A5 /* Main.storyboard in Resources */,
+				5F473AAE20D55C550013D6AF /* Loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +313,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -281,6 +321,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -297,6 +338,7 @@
 				5F7F572420D0BF71005F86A5 /* ArticleNetwork.swift in Sources */,
 				5F41E57020D20BD300AB1B75 /* HeadlineListInteractor.swift in Sources */,
 				5F7F571A20D0BBA4005F86A5 /* Source.swift in Sources */,
+				5F3D576220D597F3003AC6E4 /* LoadingView.swift in Sources */,
 				5F7F570720D0BA34005F86A5 /* HeadlineListVC.swift in Sources */,
 				5F7F570520D0BA34005F86A5 /* AppDelegate.swift in Sources */,
 				5F7F571820D0BB56005F86A5 /* Article.swift in Sources */,
@@ -451,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLL9B4R9ZN;
 				INFOPLIST_FILE = CleanNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,6 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLL9B4R9ZN;
 				INFOPLIST_FILE = CleanNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
