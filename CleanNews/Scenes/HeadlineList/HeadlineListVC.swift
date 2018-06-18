@@ -20,6 +20,10 @@ protocol HeadlineListDisplayLogic: class {
 class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
 
     var interactor: HeadlineListBusinessLogic!
+    var articles: [Article] = []
+    var currentPage = 1
+    var totalArticles = 0
+    var currentCategory = "business"
     
     @IBOutlet weak var articlesTable: UITableView!
     
@@ -30,11 +34,8 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.fetchTopHeadlines(category: "business", page: 1)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        setupTableView()
+        interactor.fetchTopHeadlines(category: currentCategory, page: currentPage)
     }
     
     private func setup() {
@@ -49,13 +50,16 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
         presenter.viewController = viewController
     }
     
-    private func setupView() {
-        //articlesTable = UITableView(frame: CGRect()
+    private func setupTableView() {
+        articlesTable.delegate = self
+        articlesTable.dataSource = self
     }
     
     func displayTopHeadlines(_ articles: [Article], total: Int) {
-        print(articles)
-        self.hideLoading()
+        self.articles.append(contentsOf: articles)
+        self.totalArticles = total
+        
+        self.articlesTable.reloadData()
     }
     
     func displayErrorMessage(_ errorMessage: String) {
@@ -74,4 +78,49 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
         }
     }
 }
+
+extension HeadlineListVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let article = articles[indexPath.row]
+        return UITableViewCell()
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
