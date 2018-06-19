@@ -9,5 +9,6 @@ target 'CleanNews' do
   pod 'Moya', '~> 11.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'lottie-ios'
+  pod 'SDWebImage', '~> 4.0'
   
 end

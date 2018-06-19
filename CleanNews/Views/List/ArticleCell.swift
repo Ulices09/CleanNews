@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleCell: UITableViewCell {
     
@@ -34,7 +35,8 @@ class ArticleCell: UITableViewCell {
     private let articleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
+        imageView.image = #imageLiteral(resourceName: "news_placeholder")
         return imageView
     }()
     
@@ -75,7 +77,6 @@ class ArticleCell: UITableViewCell {
         bottomContainer.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         bottomContainer.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
         bottomContainer.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor).isActive = true
-        bottomContainer.heightAnchor.constraint(equalToConstant: 25).isActive = true
 
         sourceLabel.topAnchor.constraint(equalTo: bottomContainer.topAnchor).isActive = true
         sourceLabel.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor).isActive = true
@@ -87,7 +88,19 @@ class ArticleCell: UITableViewCell {
     }
     
     func setupData(article: Article) {
-        articleImageView.image = #imageLiteral(resourceName: "news_placeholder")
+        
+        if let urlToImage = article.urlToImage {
+            articleImageView.sd_setImage(with: URL(string: urlToImage)) { (image, error, cacheType, url) in
+                if error == nil { self.articleImageView.image = image }
+                else {
+                    print("Error")
+                    self.articleImageView.image = #imageLiteral(resourceName: "news_placeholder") }
+            }
+        } else {
+            print("Es null")
+            articleImageView.image = #imageLiteral(resourceName: "news_placeholder")
+        }
+        
         titleTextView.text = article.title ?? "gg"
         sourceLabel.text = "BBC News"
     }
