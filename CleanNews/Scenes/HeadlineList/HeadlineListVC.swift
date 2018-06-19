@@ -33,7 +33,7 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setup()
+        //setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +43,7 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
         setupTableView()
         interactor.fetchTopHeadlines(category: currentCategory, page: currentPage)
     }
