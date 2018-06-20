@@ -8,7 +8,6 @@
 
 import UIKit
 import Lottie
-//#6DD88A
 
 // TODO: Create extension for reuse identifiers
 let cellRI = "ArticleCell"
@@ -31,11 +30,6 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     
     var articlesTable: UITableView = UITableView()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        //setup()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //setupTableView()
@@ -44,7 +38,7 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupTableView()
+        setupViews()
         interactor.fetchTopHeadlines(category: currentCategory, page: currentPage)
     }
     
@@ -60,7 +54,9 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
         presenter.viewController = viewController
     }
     
-    private func setupTableView() {
+    private func setupViews() {
+        parent?.title = "Headlines"
+        
         view.addSubview(articlesTable)
         articlesTable.translatesAutoresizingMaskIntoConstraints = false
         articlesTable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true

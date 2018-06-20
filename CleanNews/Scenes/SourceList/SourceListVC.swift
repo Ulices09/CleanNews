@@ -1,5 +1,5 @@
 //
-//  SearchListVC.swift
+//  SourceListVC.swift
 //  CleanNews
 //
 //  Created by Ulices Meléndez on 19/06/18.
@@ -8,23 +8,23 @@
 
 import UIKit
 
-class SearchListVC: UIViewController {
-    
+class SourceListVC: UIViewController {
+
     let mainLabel: UILabel = {
         let label = UILabel()
-        label.text = "SEARCH"
+        label.text = "SOURCES"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViews()
+        setupViews()
     }
     
     private func setupViews() {
-        parent?.title = "Search"
-        view.addSubview(mainLabel)
+        parent?.title = "Sources"
+        self.view.addSubview(mainLabel)
         mainLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         mainLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
     }

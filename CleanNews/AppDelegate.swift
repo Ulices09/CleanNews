@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window!.makeKeyAndVisible()
         
-//        if let statusbar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
-//            statusbar.isHidden = false
-//            statusbar.backgroundColor = UIColor.green
-//        }
+        if let statusbar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+            statusbar.isHidden = false
+            statusbar.backgroundColor = UIColor.primaryColor
+        }
         
         return true
     }

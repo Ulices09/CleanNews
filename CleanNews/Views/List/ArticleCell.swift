@@ -26,7 +26,7 @@ class ArticleCell: UITableViewCell {
     
     private let sourceLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(named: "PrimaryColor")
+        label.textColor = UIColor.primaryColor
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

@@ -1,5 +1,5 @@
 //
-//  SearchListVC.swift
+//  BookmarkListVC.swift
 //  CleanNews
 //
 //  Created by Ulices Meléndez on 19/06/18.
@@ -8,22 +8,22 @@
 
 import UIKit
 
-class SearchListVC: UIViewController {
-    
+class BookmarkListVC: UIViewController {
+
     let mainLabel: UILabel = {
         let label = UILabel()
-        label.text = "SEARCH"
+        label.text = "BOOKMARKS"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupViews()
+        setupViews()
     }
-    
+
     private func setupViews() {
-        parent?.title = "Search"
+        parent?.title = "Bookmarks"
         view.addSubview(mainLabel)
         mainLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         mainLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true

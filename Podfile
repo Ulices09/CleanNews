@@ -10,5 +10,6 @@ target 'CleanNews' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'lottie-ios'
   pod 'SDWebImage', '~> 4.0'
+  pod 'FontAwesome.swift'
   
 end
