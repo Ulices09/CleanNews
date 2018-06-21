@@ -55,8 +55,7 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     }
     
     private func setupViews() {
-        parent?.title = "Headlines"
-        
+        title = "Headlines"
         view.addSubview(articlesTable)
         articlesTable.translatesAutoresizingMaskIntoConstraints = false
         articlesTable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true

@@ -23,7 +23,7 @@ class BookmarkListVC: UIViewController {
     }
 
     private func setupViews() {
-        parent?.title = "Bookmarks"
+        title = "Bookmarks"
         view.addSubview(mainLabel)
         mainLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         mainLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true

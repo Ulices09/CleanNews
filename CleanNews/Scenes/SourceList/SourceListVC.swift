@@ -23,7 +23,7 @@ class SourceListVC: UIViewController {
     }
     
     private func setupViews() {
-        parent?.title = "Sources"
+        title = "Sources"
         self.view.addSubview(mainLabel)
         mainLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         mainLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true

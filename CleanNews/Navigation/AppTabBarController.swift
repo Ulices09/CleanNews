@@ -11,9 +11,14 @@ import FontAwesome_swift
 
 class AppTabBarController: UITabBarController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        //setupView()
     }
 
     private func setupView() {
@@ -29,20 +34,60 @@ class AppTabBarController: UITabBarController {
         let bookmarkListVC = BookmarkListVC()
         
         let headlineListUIImage = UIImage.fontAwesomeIcon(name: .fire, textColor: UIColor.primaryColor, size: CGSize(width: iconSize, height: iconSize))
-        headlineListVC.tabBarItem = UITabBarItem(title: "Headlines", image: headlineListUIImage, tag: 0)
+        //headlineListVC.tabBarItem = UITabBarItem(title: "Headlines", image: headlineListUIImage, tag: 0)
+        addTabBarItem(viewController: headlineListVC, title: "Headlines", image: headlineListUIImage, tag: 0)
         
         let sourceListUIImage = UIImage.fontAwesomeIcon(name: .newspaperO, textColor: UIColor.primaryColor, size: CGSize(width: iconSize, height: iconSize))
-        sourceListVC.tabBarItem = UITabBarItem(title: "Sources", image: sourceListUIImage, tag: 1)
+        //sourceListVC.tabBarItem = UITabBarItem(title: "Sources", image: sourceListUIImage, tag: 1)
+        addTabBarItem(viewController: sourceListVC, title: "Sources", image: sourceListUIImage, tag: 1)
         
-        searchListVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 2)
+        //searchListVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 2)
+        addTabBarItem(viewController: searchListVC, tabBarSystemItem: .search, tag: 2)
         
         let bookmarkListUIImage = UIImage.fontAwesomeIcon(name: .bookmark, textColor: UIColor.primaryColor, size: CGSize(width: iconSize, height: iconSize))
-        bookmarkListVC.tabBarItem = UITabBarItem(title: "Bookmarks", image: bookmarkListUIImage, tag: 3)
+        //bookmarkListVC.tabBarItem = UITabBarItem(title: "Bookmarks", image: bookmarkListUIImage, tag: 3)
+        addTabBarItem(viewController: bookmarkListVC, title: "Bookmarks", image: bookmarkListUIImage, tag: 3)
         
-        let viewControllerList = [headlineListVC, sourceListVC, searchListVC, bookmarkListVC]
-        
+        //let viewControllerList = [headlineListVC, sourceListVC, searchListVC, bookmarkListVC]
         //viewControllers = viewControllerList.map { UINavigationController(rootViewController: $0) }
-        viewControllers = viewControllerList
+        //viewControllers = viewControllerList
+    }
+    
+    private func addTabBarItem(viewController: UIViewController, title: String, image: UIImage, tag: Int) {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        addChildViewController(navigationController)
+        navigationController.tabBarItem = UITabBarItem(title: title, image: image, tag: tag)
+    }
+    
+    private func addTabBarItem(viewController: UIViewController, tabBarSystemItem: UITabBarSystemItem, tag: Int) {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        addChildViewController(navigationController)
+        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: tabBarSystemItem, tag: tag)
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,16 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: AppTabBarController())
-        window?.backgroundColor = UIColor.white
-        window!.makeKeyAndVisible()
-        
-        if let statusbar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
-            statusbar.isHidden = false
-            statusbar.backgroundColor = UIColor.primaryColor
-        }
-        
+        configureViews()
         return true
     }
 
@@ -50,7 +41,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
+
+extension AppDelegate {
+    
+    private func configureViews() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = AppTabBarController()
+        window?.backgroundColor = UIColor.white
+        window!.makeKeyAndVisible()
+        
+        UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.isStatusBarHidden = false
+        
+        UINavigationBar.appearance().barTintColor = UIColor.backgroudColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
