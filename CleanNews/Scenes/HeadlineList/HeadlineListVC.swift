@@ -27,6 +27,7 @@ class HeadlineListVC: UIViewController {
     var currentPage = 1
     var totalArticles = 0
     var currentCategory = "business"
+    var loadingMore = false
     
     var articlesTable: UITableView = UITableView()
     
@@ -66,7 +67,7 @@ class HeadlineListVC: UIViewController {
         articlesTable.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         articlesTable.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         
-        articlesTable.tableFooterView = UIView(frame: .zero)
+        articlesTable.setupLoadingFooterView()
         articlesTable.refreshControl = tableRefreshControl
         
         articlesTable.delegate = self
@@ -83,6 +84,12 @@ class HeadlineListVC: UIViewController {
         currentPage = 1
         interactor.fetchTopHeadlines(category: currentCategory, page: currentPage, isRefreshing: true)
     }
+    
+    private func loadMoreData() {
+        currentPage += 1
+        loadingMore = true
+        interactor.fetchTopHeadlines(category: currentCategory, page: currentPage, isRefreshing: false)
+    }
 }
 
 extension HeadlineListVC: HeadlineListDisplayLogic {
@@ -91,10 +98,12 @@ extension HeadlineListVC: HeadlineListDisplayLogic {
         if(currentPage == 1) { self.articles = [] }
         
         self.articles.append(contentsOf: articles)
-        self.totalArticles = total
+        totalArticles = total
         
+        loadingMore = false
         tableRefreshControl.endRefreshing()
-        self.articlesTable.reloadData()
+        articlesTable.hideFooterView()
+        articlesTable.reloadData()
     }
     
     func displayErrorMessage(_ errorMessage: String) {
@@ -104,7 +113,6 @@ extension HeadlineListVC: HeadlineListDisplayLogic {
     func displayLoading() {
         let loadingView = ViewHelper.getLoadingView(parentView: self.view)
         self.view.addSubview(loadingView)
-        
     }
     
     func hideLoading() {
@@ -127,15 +135,20 @@ extension HeadlineListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == articles.count - 1 && !loadingMore && articles.count < totalArticles {
+            articlesTable.showFooterView()
+            loadMoreData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
 }
+
+
+
 
 
 
