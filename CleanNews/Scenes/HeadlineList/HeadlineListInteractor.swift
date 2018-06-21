@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HeadlineListBusinessLogic: class {
-    func fetchTopHeadlines(category: String, page: NSInteger)
+    func fetchTopHeadlines(category: String, page: NSInteger, isRefreshing: Bool)
 }
 
 class HeadlineListInteractor: HeadlineListBusinessLogic {
@@ -17,8 +17,10 @@ class HeadlineListInteractor: HeadlineListBusinessLogic {
     var networkWorker: HeadlineNetworkProtocol!
     var presenter: HeadlineListPresentationLogic!
     
-    func fetchTopHeadlines(category: String, page: NSInteger) {
-        self.presenter.presentLoading()
+    func fetchTopHeadlines(category: String, page: NSInteger, isRefreshing: Bool) {
+        
+        if (page == 1 && !isRefreshing) { self.presenter.presentLoading() }
+        
         networkWorker.fetchTopHeadlines(category: category, page: page) { (articles, total, error) in
 
             if let articles = articles {

@@ -19,7 +19,7 @@ protocol HeadlineListDisplayLogic: class {
     func hideLoading()
 }
 
-class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
+class HeadlineListVC: UIViewController {
 
     var interactor: HeadlineListBusinessLogic!
     
@@ -30,16 +30,18 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     
     var articlesTable: UITableView = UITableView()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //setupTableView()
-    }
+    lazy var tableRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HeadlineListVC.refreshTopHeadlines(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.primaryColor
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupViews()
-        interactor.fetchTopHeadlines(category: currentCategory, page: currentPage)
+        interactor.fetchTopHeadlines(category: currentCategory, page: currentPage, isRefreshing: false)
     }
     
     private func setup() {
@@ -57,6 +59,7 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
     private func setupViews() {
         title = "Headlines"
         view.addSubview(articlesTable)
+        
         articlesTable.translatesAutoresizingMaskIntoConstraints = false
         articlesTable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         articlesTable.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -64,6 +67,7 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
         articlesTable.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         
         articlesTable.tableFooterView = UIView(frame: .zero)
+        articlesTable.refreshControl = tableRefreshControl
         
         articlesTable.delegate = self
         articlesTable.dataSource = self
@@ -75,10 +79,21 @@ class HeadlineListVC: UIViewController, HeadlineListDisplayLogic {
         
     }
     
+    @objc func refreshTopHeadlines(_ sender: Any) {
+        currentPage = 1
+        interactor.fetchTopHeadlines(category: currentCategory, page: currentPage, isRefreshing: true)
+    }
+}
+
+extension HeadlineListVC: HeadlineListDisplayLogic {
+    
     func displayTopHeadlines(_ articles: [Article], total: Int) {
+        if(currentPage == 1) { self.articles = [] }
+        
         self.articles.append(contentsOf: articles)
         self.totalArticles = total
         
+        tableRefreshControl.endRefreshing()
         self.articlesTable.reloadData()
     }
     
