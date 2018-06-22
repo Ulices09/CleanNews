@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import Lottie
-
-// TODO: Create extension for reuse identifiers
-let cellRI = "ArticleCell"
 
 protocol HeadlineListDisplayLogic: class {
     func displayTopHeadlines(_ articles: [Article], total: Int)
@@ -76,7 +72,7 @@ class HeadlineListVC: UIViewController {
         articlesTable.estimatedRowHeight = 44
         articlesTable.rowHeight = UITableViewAutomaticDimension
         
-        articlesTable.register(ArticleCell.self, forCellReuseIdentifier: cellRI)
+        articlesTable.register(ArticleCell.self, forCellReuseIdentifier: ArticleCell.defaultReuseIdentifier)
         
     }
     
@@ -130,7 +126,7 @@ extension HeadlineListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article = articles[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellRI, for: indexPath) as! ArticleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.defaultReuseIdentifier, for: indexPath) as! ArticleCell
         cell.setupData(article: article)
         return cell
     }
