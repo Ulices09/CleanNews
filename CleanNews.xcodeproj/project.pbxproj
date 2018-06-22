@@ -29,6 +29,7 @@
 		5F7F572220D0BEFA005F86A5 /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */; };
 		5F7F572420D0BF71005F86A5 /* ArticleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572320D0BF71005F86A5 /* ArticleNetwork.swift */; };
 		5F978DC820D6CC86006976D4 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F978DC720D6CC86006976D4 /* ArticleCell.swift */; };
+		5FE200BA20DCB8DF002586CC /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE200B920DCB8DF002586CC /* UITableViewCellExtensions.swift */; };
 		C7E156A32676DF6CA6ED4C44 /* Pods_CleanNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB4E576F29E1D041619193 /* Pods_CleanNews.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		5F7F572320D0BF71005F86A5 /* ArticleNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNetwork.swift; sourceTree = "<group>"; };
 		5F978DC720D6CC86006976D4 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		5FE200B920DCB8DF002586CC /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		AFCB4E576F29E1D041619193 /* Pods_CleanNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				5F6C483420D9E978009BEF8C /* UIColorExtensions.swift */,
 				5F0D9E7A20DC68AC003ED6ED /* UITableViewExtensions.swift */,
 				5F0D9E7C20DC72B0003ED6ED /* ReusableViewExtensions.swift */,
+				5FE200B920DCB8DF002586CC /* UITableViewCellExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				5F7F572220D0BEFA005F86A5 /* ArticleAPI.swift in Sources */,
 				5F0D9E7D20DC72B0003ED6ED /* ReusableViewExtensions.swift in Sources */,
 				5F41E56C20D1D7CC00AB1B75 /* ArticleMapper.swift in Sources */,
+				5FE200BA20DCB8DF002586CC /* UITableViewCellExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

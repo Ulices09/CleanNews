@@ -24,6 +24,7 @@ class HeadlineListVC: UIViewController {
     var totalArticles = 0
     var currentCategory = "business"
     var loadingMore = false
+    var showedCellIndexes: [IndexPath] = []
     
     var articlesTable: UITableView = UITableView()
     
@@ -91,7 +92,10 @@ class HeadlineListVC: UIViewController {
 extension HeadlineListVC: HeadlineListDisplayLogic {
     
     func displayTopHeadlines(_ articles: [Article], total: Int) {
-        if(currentPage == 1) { self.articles = [] }
+        if(currentPage == 1) {
+            self.articles = []
+            showedCellIndexes = []
+        }
         
         self.articles.append(contentsOf: articles)
         totalArticles = total
@@ -132,6 +136,13 @@ extension HeadlineListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if !showedCellIndexes.contains(indexPath) {
+            showedCellIndexes.append(indexPath)
+            cell.animateOnDisplay()
+        }
+        
+        
         if indexPath.row == articles.count - 1 && !loadingMore && articles.count < totalArticles {
             articlesTable.showFooterView()
             loadMoreData()

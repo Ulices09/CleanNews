@@ -88,21 +88,29 @@ class ArticleCell: UITableViewCell {
     }
     
     func setupData(article: Article) {
-        
-        if let urlToImage = article.urlToImage {
-            articleImageView.sd_setImage(with: URL(string: urlToImage)) { (image, error, cacheType, url) in
-                if error == nil { self.articleImageView.image = image }
-                else {
-                    print("Error")
-                    self.articleImageView.image = #imageLiteral(resourceName: "news_placeholder") }
-            }
-        } else {
-            print("Es null")
-            articleImageView.image = #imageLiteral(resourceName: "news_placeholder")
-        }
-        
+        setupArticeImageView(urlToImage: article.urlToImage)
         titleTextView.text = article.title ?? "gg"
         sourceLabel.text = "BBC News"
+    }
+    
+    private func setupArticeImageView(urlToImage: String?) {
+        if let urlImage = urlToImage {
+            articleImageView.sd_setImage(with: URL(string: urlImage)) { (image, error, cacheType, url) in
+                if error == nil {
+                    //self.articleImageView.alpha = 0
+                    self.articleImageView.image = image
+//                    UIView.animate(withDuration: 0.3, animations: {
+//                        self.articleImageView.alpha = 1
+//                    })
+                } else {
+                    print("Error on download image from url")
+                    self.articleImageView.image = #imageLiteral(resourceName: "news_placeholder")
+                }
+            }
+        } else {
+            print("urlImage is null")
+            articleImageView.image = #imageLiteral(resourceName: "news_placeholder")
+        }
     }
     
 }
