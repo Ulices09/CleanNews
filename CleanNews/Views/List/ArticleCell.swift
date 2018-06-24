@@ -16,6 +16,7 @@ class ArticleCell: UITableViewCell {
         textView.text = "Test label"
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = false
+        textView.isUserInteractionEnabled = false
         textView.font = UIFont.boldSystemFont(ofSize: 17)
         textView.textContainer.maximumNumberOfLines = 3
         textView.textContainer.lineBreakMode = .byTruncatingTail

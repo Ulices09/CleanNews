@@ -29,6 +29,8 @@
 		5F7F572220D0BEFA005F86A5 /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */; };
 		5F7F572420D0BF71005F86A5 /* ArticleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572320D0BF71005F86A5 /* ArticleNetwork.swift */; };
 		5F978DC820D6CC86006976D4 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F978DC720D6CC86006976D4 /* ArticleCell.swift */; };
+		5FAAEEBE20DF3F5000E82721 /* HeadlineListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */; };
+		5FC9D2E820DDEB7A005CF7E7 /* ArticleWebDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9D2E720DDEB7A005CF7E7 /* ArticleWebDetailVC.swift */; };
 		5FE200BA20DCB8DF002586CC /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE200B920DCB8DF002586CC /* UITableViewCellExtensions.swift */; };
 		C7E156A32676DF6CA6ED4C44 /* Pods_CleanNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCB4E576F29E1D041619193 /* Pods_CleanNews.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		5F7F572320D0BF71005F86A5 /* ArticleNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNetwork.swift; sourceTree = "<group>"; };
 		5F978DC720D6CC86006976D4 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListRouter.swift; sourceTree = "<group>"; };
+		5FC9D2E720DDEB7A005CF7E7 /* ArticleWebDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebDetailVC.swift; sourceTree = "<group>"; };
 		5FE200B920DCB8DF002586CC /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		AFCB4E576F29E1D041619193 /* Pods_CleanNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CleanNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +120,7 @@
 				5F6C483620D9EA9D009BEF8C /* SourceList */,
 				5F843C4620D485A900813BAE /* SearchList */,
 				5F6C483920D9EFA5009BEF8C /* BookmarkList */,
+				5FC9D2E620DDEB51005CF7E7 /* ArticleWebDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				5F7F570620D0BA34005F86A5 /* HeadlineListVC.swift */,
 				5F41E56F20D20BD300AB1B75 /* HeadlineListInteractor.swift */,
 				5F41E57120D2137400AB1B75 /* HeadlineListPresenter.swift */,
+				5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */,
 			);
 			path = HeadlineList;
 			sourceTree = "<group>";
@@ -278,6 +284,14 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		5FC9D2E620DDEB51005CF7E7 /* ArticleWebDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5FC9D2E720DDEB7A005CF7E7 /* ArticleWebDetailVC.swift */,
+			);
+			path = ArticleWebDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +422,7 @@
 				5F6C483820D9EAB7009BEF8C /* SourceListVC.swift in Sources */,
 				5F7F571A20D0BBA4005F86A5 /* Source.swift in Sources */,
 				5F3D576220D597F3003AC6E4 /* LoadingView.swift in Sources */,
+				5FAAEEBE20DF3F5000E82721 /* HeadlineListRouter.swift in Sources */,
 				5F6C483B20D9EFC9009BEF8C /* BookmarkListVC.swift in Sources */,
 				5F7F570720D0BA34005F86A5 /* HeadlineListVC.swift in Sources */,
 				5F7F570520D0BA34005F86A5 /* AppDelegate.swift in Sources */,
@@ -422,6 +437,7 @@
 				5F0D9E7D20DC72B0003ED6ED /* ReusableViewExtensions.swift in Sources */,
 				5F41E56C20D1D7CC00AB1B75 /* ArticleMapper.swift in Sources */,
 				5FE200BA20DCB8DF002586CC /* UITableViewCellExtensions.swift in Sources */,
+				5FC9D2E820DDEB7A005CF7E7 /* ArticleWebDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

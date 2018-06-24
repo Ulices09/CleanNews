@@ -18,6 +18,7 @@ protocol HeadlineListDisplayLogic: class {
 class HeadlineListVC: UIViewController {
 
     var interactor: HeadlineListBusinessLogic!
+    var router: HeadlineListRoutingLogic!
     
     var articles: [Article] = []
     var currentPage = 1
@@ -47,11 +48,15 @@ class HeadlineListVC: UIViewController {
         let interactor = HeadlineListInteractor()
         let presenter = HeadlineListPresenter()
         let networkWorker = ArticleNetwork()
+        let router = HeadlineListRouter()
         
         viewController.interactor = interactor
         interactor.networkWorker = networkWorker
         interactor.presenter = presenter
         presenter.viewController = viewController
+        viewController.router = router
+        router.viewController = viewController
+        
     }
     
     private func setupViews() {
@@ -133,6 +138,11 @@ extension HeadlineListVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.defaultReuseIdentifier, for: indexPath) as! ArticleCell
         cell.setupData(article: article)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let articleUrl = articles[indexPath.row].url
+        router.navigateToArticleWebDetail(articleUrl: articleUrl)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -55,6 +55,7 @@ extension AppDelegate {
         UIApplication.shared.isStatusBarHidden = false
         
         UINavigationBar.appearance().barTintColor = UIColor.backgroudColor
+        UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
     }
 }
