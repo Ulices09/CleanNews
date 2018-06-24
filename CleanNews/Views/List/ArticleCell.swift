@@ -13,7 +13,6 @@ class ArticleCell: UITableViewCell {
     
     private let titleTextView: UITextView = {
         let textView = UITextView()
-        textView.text = "Test label"
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = false
         textView.isUserInteractionEnabled = false
@@ -28,6 +27,7 @@ class ArticleCell: UITableViewCell {
     private let sourceLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.primaryColor
+        label.text = ""
         label.font = UIFont.boldSystemFont(ofSize: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -90,8 +90,8 @@ class ArticleCell: UITableViewCell {
     
     func setupData(article: Article) {
         setupArticeImageView(urlToImage: article.urlToImage)
-        titleTextView.text = article.title ?? "gg"
-        sourceLabel.text = "BBC News"
+        titleTextView.text = article.title ?? ""
+        if let source = article.source { sourceLabel.text = source.name }
     }
     
     private func setupArticeImageView(urlToImage: String?) {

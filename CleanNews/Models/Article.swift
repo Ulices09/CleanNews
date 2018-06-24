@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 struct Article {
-    //var source: Source?
+    var source: Source?
     var author: String?
     var title: String?
     var description: String
@@ -30,11 +30,6 @@ extension Article {
         self.url = json["url"].stringValue
         self.urlToImage = json["urlToImage"].stringValue
         self.publishedAt = json["publishedAt"].stringValue
-
-//        if json["source"].exists() {
-//            self.source = Source(json: json["source"])
-//        }
-
-
+        if json["source"].exists() { self.source = Source(json: json["source"]) }
     }
 }

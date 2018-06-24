@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 struct Source {
     var id: String?
@@ -16,4 +17,12 @@ struct Source {
     var category: String?
     var language: String?
     var country: String?
+}
+
+extension Source {
+
+    init(json: JSON) {
+        self.name = json["name"].stringValue
+        if let id = json["id"].string { self.id = id }
+    }
 }
