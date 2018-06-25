@@ -14,14 +14,14 @@ protocol HeadlineListBusinessLogic: class {
 
 class HeadlineListInteractor: HeadlineListBusinessLogic {
     
-    var networkWorker: HeadlineNetworkProtocol!
+    var serviceWorker: HeadlineServiceProtocol!
     var presenter: HeadlineListPresentationLogic!
     
     func fetchTopHeadlines(category: String, page: NSInteger, isRefreshing: Bool) {
         
         if (page == 1 && !isRefreshing) { self.presenter.presentLoading() }
         
-        networkWorker.fetchTopHeadlines(category: category, page: page) { (articles, total, error) in
+        serviceWorker.fetchTopHeadlines(category: category, page: page) { (articles, total, error) in
 
             if let articles = articles {
                 self.presenter.presentTopHeadlines(articles, total: total)

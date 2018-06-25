@@ -10,11 +10,11 @@ import Foundation
 import Moya
 import SwiftyJSON
 
-protocol HeadlineNetworkProtocol {
+protocol HeadlineServiceProtocol {
     func fetchTopHeadlines(category: String, page: NSInteger, closure: @escaping ([Article]?, NSInteger, NSError?) -> Void ) -> Void
 }
 
-struct ArticleNetwork: HeadlineNetworkProtocol {
+struct ArticleService: HeadlineServiceProtocol {
     
     private let provider: MoyaProvider<ArticleAPI> = MoyaProvider<ArticleAPI>()
     

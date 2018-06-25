@@ -19,6 +19,13 @@
 		5F6C483B20D9EFC9009BEF8C /* BookmarkListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C483A20D9EFC9009BEF8C /* BookmarkListVC.swift */; };
 		5F70F94B20D9C023000E9C8D /* SearchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70F94A20D9C023000E9C8D /* SearchListVC.swift */; };
 		5F70F94E20D9C85C000E9C8D /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70F94D20D9C85C000E9C8D /* AppTabBarController.swift */; };
+		5F75963920E05C4600D2C393 /* SourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75963820E05C4600D2C393 /* SourceAPI.swift */; };
+		5F75963B20E05E8F00D2C393 /* SourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75963A20E05E8F00D2C393 /* SourceService.swift */; };
+		5F75963D20E061BB00D2C393 /* SourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75963C20E061BB00D2C393 /* SourceMapper.swift */; };
+		5F75963F20E0656200D2C393 /* SourceListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75963E20E0656200D2C393 /* SourceListInteractor.swift */; };
+		5F75964120E0657500D2C393 /* SourceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75964020E0657500D2C393 /* SourceListPresenter.swift */; };
+		5F75964320E0658400D2C393 /* SourceListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75964220E0658400D2C393 /* SourceListRouter.swift */; };
+		5F75964520E0876700D2C393 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75964420E0876700D2C393 /* SourceCell.swift */; };
 		5F7F570520D0BA34005F86A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F570420D0BA34005F86A5 /* AppDelegate.swift */; };
 		5F7F570720D0BA34005F86A5 /* HeadlineListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F570620D0BA34005F86A5 /* HeadlineListVC.swift */; };
 		5F7F570C20D0BA35005F86A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F7F570B20D0BA35005F86A5 /* Assets.xcassets */; };
@@ -27,7 +34,7 @@
 		5F7F571A20D0BBA4005F86A5 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F571920D0BBA4005F86A5 /* Source.swift */; };
 		5F7F572020D0BEDF005F86A5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F571F20D0BEDF005F86A5 /* API.swift */; };
 		5F7F572220D0BEFA005F86A5 /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */; };
-		5F7F572420D0BF71005F86A5 /* ArticleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572320D0BF71005F86A5 /* ArticleNetwork.swift */; };
+		5F7F572420D0BF71005F86A5 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572320D0BF71005F86A5 /* ArticleService.swift */; };
 		5F978DC820D6CC86006976D4 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F978DC720D6CC86006976D4 /* ArticleCell.swift */; };
 		5FAAEEBE20DF3F5000E82721 /* HeadlineListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */; };
 		5FC9D2E820DDEB7A005CF7E7 /* ArticleWebDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9D2E720DDEB7A005CF7E7 /* ArticleWebDetailVC.swift */; };
@@ -50,6 +57,13 @@
 		5F6C483A20D9EFC9009BEF8C /* BookmarkListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListVC.swift; sourceTree = "<group>"; };
 		5F70F94A20D9C023000E9C8D /* SearchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListVC.swift; sourceTree = "<group>"; };
 		5F70F94D20D9C85C000E9C8D /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
+		5F75963820E05C4600D2C393 /* SourceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceAPI.swift; sourceTree = "<group>"; };
+		5F75963A20E05E8F00D2C393 /* SourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceService.swift; sourceTree = "<group>"; };
+		5F75963C20E061BB00D2C393 /* SourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceMapper.swift; sourceTree = "<group>"; };
+		5F75963E20E0656200D2C393 /* SourceListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListInteractor.swift; sourceTree = "<group>"; };
+		5F75964020E0657500D2C393 /* SourceListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListPresenter.swift; sourceTree = "<group>"; };
+		5F75964220E0658400D2C393 /* SourceListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListRouter.swift; sourceTree = "<group>"; };
+		5F75964420E0876700D2C393 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
 		5F7F570120D0BA34005F86A5 /* CleanNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7F570420D0BA34005F86A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F7F570620D0BA34005F86A5 /* HeadlineListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListVC.swift; sourceTree = "<group>"; };
@@ -60,7 +74,7 @@
 		5F7F571920D0BBA4005F86A5 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		5F7F571F20D0BEDF005F86A5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
-		5F7F572320D0BF71005F86A5 /* ArticleNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNetwork.swift; sourceTree = "<group>"; };
+		5F7F572320D0BF71005F86A5 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		5F978DC720D6CC86006976D4 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListRouter.swift; sourceTree = "<group>"; };
 		5FC9D2E720DDEB7A005CF7E7 /* ArticleWebDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebDetailVC.swift; sourceTree = "<group>"; };
@@ -109,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				5F41E56B20D1D7CC00AB1B75 /* ArticleMapper.swift */,
+				5F75963C20E061BB00D2C393 /* SourceMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -129,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				5F7F570620D0BA34005F86A5 /* HeadlineListVC.swift */,
-				5F41E56F20D20BD300AB1B75 /* HeadlineListInteractor.swift */,
 				5F41E57120D2137400AB1B75 /* HeadlineListPresenter.swift */,
+				5F41E56F20D20BD300AB1B75 /* HeadlineListInteractor.swift */,
 				5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */,
 			);
 			path = HeadlineList;
@@ -169,6 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				5F6C483720D9EAB7009BEF8C /* SourceListVC.swift */,
+				5F75964020E0657500D2C393 /* SourceListPresenter.swift */,
+				5F75963E20E0656200D2C393 /* SourceListInteractor.swift */,
+				5F75964220E0658400D2C393 /* SourceListRouter.swift */,
 			);
 			path = SourceList;
 			sourceTree = "<group>";
@@ -236,7 +254,7 @@
 		5F7F571B20D0BE03005F86A5 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				5F7F571D20D0BEB0005F86A5 /* Network */,
+				5F7F571D20D0BEB0005F86A5 /* Service */,
 				5F7F571C20D0BEA7005F86A5 /* Local */,
 			);
 			path = Workers;
@@ -249,14 +267,15 @@
 			path = Local;
 			sourceTree = "<group>";
 		};
-		5F7F571D20D0BEB0005F86A5 /* Network */ = {
+		5F7F571D20D0BEB0005F86A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				5F7F571E20D0BEC9005F86A5 /* API */,
 				5F41E56A20D1D79300AB1B75 /* Mappers */,
-				5F7F572320D0BF71005F86A5 /* ArticleNetwork.swift */,
+				5F7F572320D0BF71005F86A5 /* ArticleService.swift */,
+				5F75963A20E05E8F00D2C393 /* SourceService.swift */,
 			);
-			path = Network;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5F7F571E20D0BEC9005F86A5 /* API */ = {
@@ -264,6 +283,7 @@
 			children = (
 				5F7F571F20D0BEDF005F86A5 /* API.swift */,
 				5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */,
+				5F75963820E05C4600D2C393 /* SourceAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -280,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				5F978DC720D6CC86006976D4 /* ArticleCell.swift */,
+				5F75964420E0876700D2C393 /* SourceCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -416,13 +437,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F7F572420D0BF71005F86A5 /* ArticleNetwork.swift in Sources */,
+				5F7F572420D0BF71005F86A5 /* ArticleService.swift in Sources */,
+				5F75963F20E0656200D2C393 /* SourceListInteractor.swift in Sources */,
+				5F75964520E0876700D2C393 /* SourceCell.swift in Sources */,
 				5F70F94B20D9C023000E9C8D /* SearchListVC.swift in Sources */,
+				5F75964320E0658400D2C393 /* SourceListRouter.swift in Sources */,
 				5F41E57020D20BD300AB1B75 /* HeadlineListInteractor.swift in Sources */,
 				5F6C483820D9EAB7009BEF8C /* SourceListVC.swift in Sources */,
 				5F7F571A20D0BBA4005F86A5 /* Source.swift in Sources */,
+				5F75963920E05C4600D2C393 /* SourceAPI.swift in Sources */,
 				5F3D576220D597F3003AC6E4 /* LoadingView.swift in Sources */,
 				5FAAEEBE20DF3F5000E82721 /* HeadlineListRouter.swift in Sources */,
+				5F75963D20E061BB00D2C393 /* SourceMapper.swift in Sources */,
+				5F75964120E0657500D2C393 /* SourceListPresenter.swift in Sources */,
+				5F75963B20E05E8F00D2C393 /* SourceService.swift in Sources */,
 				5F6C483B20D9EFC9009BEF8C /* BookmarkListVC.swift in Sources */,
 				5F7F570720D0BA34005F86A5 /* HeadlineListVC.swift in Sources */,
 				5F7F570520D0BA34005F86A5 /* AppDelegate.swift in Sources */,

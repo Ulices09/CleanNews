@@ -47,11 +47,11 @@ class HeadlineListVC: UIViewController {
         let viewController = self
         let interactor = HeadlineListInteractor()
         let presenter = HeadlineListPresenter()
-        let networkWorker = ArticleNetwork()
+        let serviceWorker = ArticleService()
         let router = HeadlineListRouter()
         
         viewController.interactor = interactor
-        interactor.networkWorker = networkWorker
+        interactor.serviceWorker = serviceWorker
         interactor.presenter = presenter
         presenter.viewController = viewController
         viewController.router = router
