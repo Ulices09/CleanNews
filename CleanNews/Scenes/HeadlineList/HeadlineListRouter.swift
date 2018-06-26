@@ -10,6 +10,7 @@ import UIKit
 
 protocol HeadlineListRoutingLogic: class {
     func navigateToArticleWebDetail(articleUrl: String)
+    func navigateToHeadlineFilter()
 }
 
 class HeadlineListRouter: HeadlineListRoutingLogic {
@@ -20,5 +21,13 @@ class HeadlineListRouter: HeadlineListRoutingLogic {
         let articleWebDetailVC = ArticleWebDetailVC()
         articleWebDetailVC.articleUrl = articleUrl
         viewController?.navigationController?.pushViewController(articleWebDetailVC, animated: true)
+    }
+    
+    func navigateToHeadlineFilter() {
+        let headlineFilterVC = HeadlineFilterVC()
+        headlineFilterVC.headlineListDelegate = viewController
+        headlineFilterVC.modalPresentationStyle = .overCurrentContext
+        //viewController?.navigationController?.pushViewController(headlineFilterVC, animated: true)
+        viewController?.present(headlineFilterVC, animated: true, completion: nil)
     }
 }

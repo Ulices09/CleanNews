@@ -15,6 +15,10 @@ protocol HeadlineListDisplayLogic: class {
     func hideLoading()
 }
 
+protocol HeadlineListDelegate: class {
+    func fetchFilteredTopHeadlines(category: String)
+}
+
 class HeadlineListVC: UIViewController {
 
     var interactor: HeadlineListBusinessLogic!
@@ -61,6 +65,22 @@ class HeadlineListVC: UIViewController {
     
     private func setupViews() {
         title = "Headlines"
+        
+        setupNavigationBarItems()
+        setupTableView()
+    }
+    
+    private func setupNavigationBarItems() {
+        let filterButtom = UIButton(type: .system)
+        let filterButtomImage = UIImage.fontAwesomeIcon(name: .sliders, textColor: UIColor.white, size: CGSize(width: 34, height: 34))
+        filterButtom.setImage(filterButtomImage, for: .normal)
+        filterButtom.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        filterButtom.addTarget(self, action: #selector(HeadlineListVC.navigateToHeadlineFilter(_:)), for: .touchUpInside)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: filterButtom)
+    }
+    
+    private func setupTableView() {
         view.addSubview(articlesTable)
         
         articlesTable.translatesAutoresizingMaskIntoConstraints = false
@@ -79,7 +99,6 @@ class HeadlineListVC: UIViewController {
         articlesTable.rowHeight = UITableViewAutomaticDimension
         
         articlesTable.register(ArticleCell.self, forCellReuseIdentifier: ArticleCell.defaultReuseIdentifier)
-        
     }
     
     @objc func refreshTopHeadlines(_ sender: Any) {
@@ -91,6 +110,10 @@ class HeadlineListVC: UIViewController {
         currentPage += 1
         loadingMore = true
         interactor.fetchTopHeadlines(category: currentCategory, page: currentPage, isRefreshing: false)
+    }
+    
+    @objc func navigateToHeadlineFilter(_ sender: UIButton!) {
+        router.navigateToHeadlineFilter()
     }
 }
 
@@ -124,6 +147,12 @@ extension HeadlineListVC: HeadlineListDisplayLogic {
         if let loadingView = self.view.viewWithTag(666) {
             loadingView.removeFromSuperview()
         }
+    }
+}
+
+extension HeadlineListVC: HeadlineListDelegate {
+    func fetchFilteredTopHeadlines(category: String) {
+        print(category)
     }
 }
 
