@@ -152,7 +152,9 @@ extension HeadlineListVC: HeadlineListDisplayLogic {
 
 extension HeadlineListVC: HeadlineListDelegate {
     func fetchFilteredTopHeadlines(category: String) {
-        print(category)
+        currentCategory = category
+        currentPage = 1
+        interactor.fetchTopHeadlines(category: currentCategory, page: currentPage, isRefreshing: false)
     }
 }
 

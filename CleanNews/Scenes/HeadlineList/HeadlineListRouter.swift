@@ -26,8 +26,11 @@ class HeadlineListRouter: HeadlineListRoutingLogic {
     func navigateToHeadlineFilter() {
         let headlineFilterVC = HeadlineFilterVC()
         headlineFilterVC.headlineListDelegate = viewController
-        headlineFilterVC.modalPresentationStyle = .overCurrentContext
-        //viewController?.navigationController?.pushViewController(headlineFilterVC, animated: true)
-        viewController?.present(headlineFilterVC, animated: true, completion: nil)
+        headlineFilterVC.currentCategory = viewController?.currentCategory
+        
+        let navigationController = UINavigationController(rootViewController: headlineFilterVC)
+        navigationController.modalPresentationStyle = .overCurrentContext
+        
+        viewController?.present(navigationController, animated: true, completion: nil)
     }
 }
