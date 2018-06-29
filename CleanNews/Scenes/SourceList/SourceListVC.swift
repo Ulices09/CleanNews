@@ -114,7 +114,7 @@ extension SourceListVC: UICollectionViewDelegate {
 extension SourceListVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let lenght = UIScreen.main.bounds.width/2 - 15
-        let itemSize = CGSize(width: lenght, height: lenght)
+        let itemSize = CGSize(width: lenght, height: 180)
         return itemSize
     }
     

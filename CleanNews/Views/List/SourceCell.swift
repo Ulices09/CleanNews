@@ -36,7 +36,7 @@ class SourceCell: UICollectionViewCell {
         textView.textContainer.lineBreakMode = .byTruncatingTail
         textView.textContainerInset = UIEdgeInsets.zero
         textView.textContainer.lineFragmentPadding = 0
-        textView.font = UIFont.systemFont(ofSize: 16)
+        textView.font = UIFont.systemFont(ofSize: 14)
         textView.textAlignment = .justified
         textView.textColor = UIColor.darkGray
         return textView
@@ -53,7 +53,7 @@ class SourceCell: UICollectionViewCell {
     
     private func setupViews() {
         
-        layer.borderWidth = 0.5
+        layer.borderWidth = 1
         layer.borderColor = UIColor.primaryColor.cgColor
         
         contentView.addSubview(nameLabel)
