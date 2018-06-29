@@ -29,6 +29,7 @@ class SourceListVC: UIViewController {
         return collectionView
     }()
     
+    private let searchController = UISearchController(searchResultsController: nil)
     private var loadingView: UIView!
     
     override func viewDidLoad() {
@@ -53,6 +54,26 @@ class SourceListVC: UIViewController {
     
     private func setupViews() {
         title = "Sources"
+        setupNavigationBar()
+        setupCollectionView()
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        searchController.searchBar.delegate = self
+        
+        if let searchTextField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            if let backgroundview = searchTextField.subviews.first {
+                backgroundview.backgroundColor = UIColor.white
+                backgroundview.layer.cornerRadius = 10
+                backgroundview.clipsToBounds = true
+            }
+        }
+        
+        navigationItem.searchController = searchController
+    }
+    
+    private func setupCollectionView(){
         view.addSubview(sourcesCollectionView)
         
         sourcesCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -84,6 +105,16 @@ extension SourceListVC: SourceListDisplayLogic {
     
     func hideLoading() {
         removeLoadinView(loadingView: loadingView)
+    }
+}
+
+extension SourceListVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("searchBarCancelButtonClicked")
     }
 }
 
