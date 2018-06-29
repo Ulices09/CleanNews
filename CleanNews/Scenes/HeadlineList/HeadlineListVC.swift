@@ -31,12 +31,13 @@ class HeadlineListVC: UIViewController {
     var loadingMore = false
     var showedCellIndexes: [IndexPath] = []
     
-    var articlesTable: UITableView = UITableView()
+    private var articlesTable: UITableView = UITableView()
+    private var loadingView: UIView!
     
     lazy var tableRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(HeadlineListVC.refreshTopHeadlines(_:)), for: .valueChanged)
-        refreshControl.tintColor = UIColor.primaryColor
+        refreshControl.tintColor = UIColor.white
         return refreshControl
     }()
     
@@ -65,7 +66,7 @@ class HeadlineListVC: UIViewController {
     
     private func setupViews() {
         title = "Headlines"
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupNavigationBarItems()
         setupTableView()
     }
@@ -139,14 +140,11 @@ extension HeadlineListVC: HeadlineListDisplayLogic {
     }
     
     func displayLoading() {
-        let loadingView = ViewHelper.getLoadingView(parentView: self.view)
-        self.view.addSubview(loadingView)
+        loadingView = displayLoadingView(view: view)
     }
     
     func hideLoading() {
-        if let loadingView = self.view.viewWithTag(666) {
-            loadingView.removeFromSuperview()
-        }
+        removeLoadinView(loadingView: loadingView)
     }
 }
 

@@ -18,6 +18,7 @@ class SourceListInteractor: SourceListBusinessLogic {
     var presenter: SourceListPresentationLogic!
     
     func fetchSources() {
+        self.presenter.presentLoading()
         serviceWorker.fetchSources { (sources, error) in
             if let sources = sources {
                 self.presenter.presentSources(sources)

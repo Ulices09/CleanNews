@@ -9,17 +9,15 @@
 import UIKit
 import WebKit
 
-class ArticleWebDetailVC: UIViewController, WKNavigationDelegate {
+class ArticleWebDetailVC: UIViewController {
 
     var articleUrl: String?
     private var detailWebView: WKWebView!
+    private var loadingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let url = URL(string: articleUrl!)!
-        detailWebView.load(URLRequest(url: url))
-        detailWebView.allowsBackForwardNavigationGestures = true
+        setupViews()
     }
 
     override func loadView() {
@@ -28,6 +26,25 @@ class ArticleWebDetailVC: UIViewController, WKNavigationDelegate {
         view = detailWebView
     }
     
+    private func setupViews() {
+        navigationItem.largeTitleDisplayMode = .never
+        let url = URL(string: articleUrl!)!
+        detailWebView.load(URLRequest(url: url))
+        detailWebView.allowsBackForwardNavigationGestures = true
+    }
+    
+}
+
+extension ArticleWebDetailVC: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        loadingView = displayLoadingView(view: view)
+    }
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        removeLoadinView(loadingView: loadingView)
+    }
+ 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("finish")
     }

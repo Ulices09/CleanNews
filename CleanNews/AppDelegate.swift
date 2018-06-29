@@ -57,6 +57,8 @@ extension AppDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.backgroudColor
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        
     }
 }
 

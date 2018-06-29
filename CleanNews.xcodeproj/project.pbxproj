@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F0D9E7B20DC68AC003ED6ED /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D9E7A20DC68AC003ED6ED /* UITableViewExtensions.swift */; };
 		5F0D9E7D20DC72B0003ED6ED /* ReusableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0D9E7C20DC72B0003ED6ED /* ReusableViewExtensions.swift */; };
-		5F3D576220D597F3003AC6E4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D576120D597F3003AC6E4 /* LoadingView.swift */; };
 		5F3F707020E3336F00A17438 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3F706F20E3336F00A17438 /* CategoryCell.swift */; };
 		5F41E56C20D1D7CC00AB1B75 /* ArticleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F41E56B20D1D7CC00AB1B75 /* ArticleMapper.swift */; };
 		5F41E57020D20BD300AB1B75 /* HeadlineListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F41E56F20D20BD300AB1B75 /* HeadlineListInteractor.swift */; };
@@ -20,6 +19,8 @@
 		5F6C483B20D9EFC9009BEF8C /* BookmarkListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C483A20D9EFC9009BEF8C /* BookmarkListVC.swift */; };
 		5F70F94B20D9C023000E9C8D /* SearchListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70F94A20D9C023000E9C8D /* SearchListVC.swift */; };
 		5F70F94E20D9C85C000E9C8D /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F70F94D20D9C85C000E9C8D /* AppTabBarController.swift */; };
+		5F73C75720E5B46100335572 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C75620E5B46100335572 /* UIViewControllerExtensions.swift */; };
+		5F73C75920E5BA0500335572 /* UICollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F73C75820E5BA0500335572 /* UICollectionViewCellExtensions.swift */; };
 		5F75963920E05C4600D2C393 /* SourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75963820E05C4600D2C393 /* SourceAPI.swift */; };
 		5F75963B20E05E8F00D2C393 /* SourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75963A20E05E8F00D2C393 /* SourceService.swift */; };
 		5F75963D20E061BB00D2C393 /* SourceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F75963C20E061BB00D2C393 /* SourceMapper.swift */; };
@@ -49,7 +50,6 @@
 		13E3ABBB5A1DD39A087E3EDE /* Pods-CleanNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CleanNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-CleanNews/Pods-CleanNews.release.xcconfig"; sourceTree = "<group>"; };
 		5F0D9E7A20DC68AC003ED6ED /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		5F0D9E7C20DC72B0003ED6ED /* ReusableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewExtensions.swift; sourceTree = "<group>"; };
-		5F3D576120D597F3003AC6E4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5F3F706F20E3336F00A17438 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		5F41E56B20D1D7CC00AB1B75 /* ArticleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleMapper.swift; sourceTree = "<group>"; };
 		5F41E56F20D20BD300AB1B75 /* HeadlineListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListInteractor.swift; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		5F6C483A20D9EFC9009BEF8C /* BookmarkListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListVC.swift; sourceTree = "<group>"; };
 		5F70F94A20D9C023000E9C8D /* SearchListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListVC.swift; sourceTree = "<group>"; };
 		5F70F94D20D9C85C000E9C8D /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
+		5F73C75620E5B46100335572 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		5F73C75820E5BA0500335572 /* UICollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 		5F75963820E05C4600D2C393 /* SourceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceAPI.swift; sourceTree = "<group>"; };
 		5F75963A20E05E8F00D2C393 /* SourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceService.swift; sourceTree = "<group>"; };
 		5F75963C20E061BB00D2C393 /* SourceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceMapper.swift; sourceTree = "<group>"; };
@@ -115,14 +117,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5F1686E820D58EFE001A9017 /* Loader */ = {
-			isa = PBXGroup;
-			children = (
-				5F3D576120D597F3003AC6E4 /* LoadingView.swift */,
-			);
-			path = Loader;
-			sourceTree = "<group>";
-		};
 		5F41E56A20D1D79300AB1B75 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				5F473AAC20D55BF30013D6AF /* Animations */,
-				5F1686E820D58EFE001A9017 /* Loader */,
 				5F978DC620D6CC4D006976D4 /* List */,
 			);
 			path = Views;
@@ -181,6 +174,8 @@
 				5F0D9E7A20DC68AC003ED6ED /* UITableViewExtensions.swift */,
 				5F0D9E7C20DC72B0003ED6ED /* ReusableViewExtensions.swift */,
 				5FE200B920DCB8DF002586CC /* UITableViewCellExtensions.swift */,
+				5F73C75620E5B46100335572 /* UIViewControllerExtensions.swift */,
+				5F73C75820E5BA0500335572 /* UICollectionViewCellExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,16 +456,17 @@
 				5F6C483820D9EAB7009BEF8C /* SourceListVC.swift in Sources */,
 				5F7F571A20D0BBA4005F86A5 /* Source.swift in Sources */,
 				5F75963920E05C4600D2C393 /* SourceAPI.swift in Sources */,
-				5F3D576220D597F3003AC6E4 /* LoadingView.swift in Sources */,
 				5FAAEEBE20DF3F5000E82721 /* HeadlineListRouter.swift in Sources */,
 				5F75963D20E061BB00D2C393 /* SourceMapper.swift in Sources */,
 				5FC1A0B420E1E62400E93184 /* HeadlineFilterVC.swift in Sources */,
 				5F75964120E0657500D2C393 /* SourceListPresenter.swift in Sources */,
 				5F75963B20E05E8F00D2C393 /* SourceService.swift in Sources */,
+				5F73C75720E5B46100335572 /* UIViewControllerExtensions.swift in Sources */,
 				5F6C483B20D9EFC9009BEF8C /* BookmarkListVC.swift in Sources */,
 				5F7F570720D0BA34005F86A5 /* HeadlineListVC.swift in Sources */,
 				5F7F570520D0BA34005F86A5 /* AppDelegate.swift in Sources */,
 				5F7F571820D0BB56005F86A5 /* Article.swift in Sources */,
+				5F73C75920E5BA0500335572 /* UICollectionViewCellExtensions.swift in Sources */,
 				5F41E57220D2137400AB1B75 /* HeadlineListPresenter.swift in Sources */,
 				5F6C483520D9E978009BEF8C /* UIColorExtensions.swift in Sources */,
 				5F0D9E7B20DC68AC003ED6ED /* UITableViewExtensions.swift in Sources */,

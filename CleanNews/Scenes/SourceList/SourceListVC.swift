@@ -22,12 +22,14 @@ class SourceListVC: UIViewController {
     var sources: [Source] = []
     var showedCellIndexes: [IndexPath] = []
     
-    var sourcesCollectionView: UICollectionView = {
+    private var sourcesCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = UIColor.white
         return collectionView
     }()
+    
+    private var loadingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,11 +79,11 @@ extension SourceListVC: SourceListDisplayLogic {
     }
     
     func displayLoading() {
-        
+        loadingView = displayLoadingView(view: view)
     }
     
     func hideLoading() {
-        
+        removeLoadinView(loadingView: loadingView)
     }
 }
 
@@ -104,18 +106,7 @@ extension SourceListVC: UICollectionViewDelegate {
         
         if !showedCellIndexes.contains(indexPath) {
             showedCellIndexes.append(indexPath)
-            cell.alpha = 0
-            
-            if indexPath.row % 2 == 0 {
-                cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, -200, 50, 0)
-            } else {
-                cell.layer.transform = CATransform3DTranslate(CATransform3DIdentity, 200, 50, 0)
-            }
-            
-            UIView.animate(withDuration: 0.5) {
-                cell.alpha = 1
-                cell.layer.transform = CATransform3DIdentity
-            }
+            cell.animateOnDisplay()
         }
     }
 }
