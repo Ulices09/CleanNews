@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+protocol SourceListRoutingProtocol: class {
+    func navigateToArticleList(sourceId: String)
+}
+
+class SourceListRouter: SourceListRoutingProtocol {
+    
+    weak var viewController: SourceListVC?
+    
+    func navigateToArticleList(sourceId: String) {
+        
+    }
+}

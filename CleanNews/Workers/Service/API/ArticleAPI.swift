@@ -10,7 +10,8 @@ import Foundation
 import Moya
 
 enum ArticleAPI {
-    case fetchTopHeadlines(category: String, page: NSInteger)
+    case fetchTopHeadlinesByCategory(category: String, page: NSInteger)
+    case fetchTopHeadlinesBySource(sourceId: String, page: NSInteger)
 }
 
 extension ArticleAPI: TargetType {
@@ -21,14 +22,16 @@ extension ArticleAPI: TargetType {
     
     var path: String {
         switch self {
-        case .fetchTopHeadlines:
+        case .fetchTopHeadlinesByCategory, .fetchTopHeadlinesBySource:
             return "/top-headlines"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .fetchTopHeadlines:
+        case .fetchTopHeadlinesByCategory:
+            return .get
+        case .fetchTopHeadlinesBySource:
             return .get
         }
     }
@@ -39,8 +42,10 @@ extension ArticleAPI: TargetType {
     
     var task: Task {
         switch self {
-        case let .fetchTopHeadlines(category, page):
+        case let .fetchTopHeadlinesByCategory(category, page):
             return .requestParameters(parameters: ["category": category, "page": page, "apiKey": API.key], encoding: URLEncoding.queryString)
+        case let .fetchTopHeadlinesBySource(sourceId, page):
+            return .requestParameters(parameters: ["sources": sourceId, "page": page, "apiKey": API.key], encoding: URLEncoding.queryString)
         }
     }
     

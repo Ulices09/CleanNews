@@ -21,7 +21,7 @@ class HeadlineListInteractor: HeadlineListBusinessLogic {
         
         if (page == 1 && !isRefreshing) { self.presenter.presentLoading() }
         
-        serviceWorker.fetchTopHeadlines(category: category, page: page) { (articles, total, error) in
+        serviceWorker.fetchTopHeadlinesByCategory(category: category, page: page) { (articles, total, error) in
 
             if let articles = articles {
                 self.presenter.presentTopHeadlines(articles, total: total)

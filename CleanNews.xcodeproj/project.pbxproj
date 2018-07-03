@@ -37,6 +37,10 @@
 		5F7F572020D0BEDF005F86A5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F571F20D0BEDF005F86A5 /* API.swift */; };
 		5F7F572220D0BEFA005F86A5 /* ArticleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */; };
 		5F7F572420D0BF71005F86A5 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7F572320D0BF71005F86A5 /* ArticleService.swift */; };
+		5F8DF24820EB1B7E002E09EA /* ArticleSourceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8DF24720EB1B7E002E09EA /* ArticleSourceListVC.swift */; };
+		5F8DF24A20EB1B93002E09EA /* ArticleSourceListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8DF24920EB1B93002E09EA /* ArticleSourceListInteractor.swift */; };
+		5F8DF24C20EB1BA3002E09EA /* ArticleSourceListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8DF24B20EB1BA3002E09EA /* ArticleSourceListPresenter.swift */; };
+		5F8DF24E20EB1BB7002E09EA /* ArticleSourceListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8DF24D20EB1BB7002E09EA /* ArticleSourceListRouter.swift */; };
 		5F978DC820D6CC86006976D4 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F978DC720D6CC86006976D4 /* ArticleCell.swift */; };
 		5FAAEEBE20DF3F5000E82721 /* HeadlineListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */; };
 		5FC1A0B420E1E62400E93184 /* HeadlineFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC1A0B320E1E62400E93184 /* HeadlineFilterVC.swift */; };
@@ -80,6 +84,10 @@
 		5F7F571F20D0BEDF005F86A5 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		5F7F572120D0BEFA005F86A5 /* ArticleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleAPI.swift; sourceTree = "<group>"; };
 		5F7F572320D0BF71005F86A5 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
+		5F8DF24720EB1B7E002E09EA /* ArticleSourceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSourceListVC.swift; sourceTree = "<group>"; };
+		5F8DF24920EB1B93002E09EA /* ArticleSourceListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSourceListInteractor.swift; sourceTree = "<group>"; };
+		5F8DF24B20EB1BA3002E09EA /* ArticleSourceListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSourceListPresenter.swift; sourceTree = "<group>"; };
+		5F8DF24D20EB1BB7002E09EA /* ArticleSourceListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSourceListRouter.swift; sourceTree = "<group>"; };
 		5F978DC720D6CC86006976D4 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		5FAAEEBD20DF3F5000E82721 /* HeadlineListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineListRouter.swift; sourceTree = "<group>"; };
 		5FC1A0B320E1E62400E93184 /* HeadlineFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineFilterVC.swift; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 				5F41E56E20D20B3900AB1B75 /* HeadlineList */,
 				5FC1A0B220E1E56D00E93184 /* HeadlineFilter */,
 				5F6C483620D9EA9D009BEF8C /* SourceList */,
+				5F8DF24620EB1B3D002E09EA /* ArticleSourceList */,
 				5F843C4620D485A900813BAE /* SearchList */,
 				5F6C483920D9EFA5009BEF8C /* BookmarkList */,
 				5FC9D2E620DDEB51005CF7E7 /* ArticleWebDetail */,
@@ -296,6 +305,17 @@
 			path = SearchList;
 			sourceTree = "<group>";
 		};
+		5F8DF24620EB1B3D002E09EA /* ArticleSourceList */ = {
+			isa = PBXGroup;
+			children = (
+				5F8DF24720EB1B7E002E09EA /* ArticleSourceListVC.swift */,
+				5F8DF24B20EB1BA3002E09EA /* ArticleSourceListPresenter.swift */,
+				5F8DF24920EB1B93002E09EA /* ArticleSourceListInteractor.swift */,
+				5F8DF24D20EB1BB7002E09EA /* ArticleSourceListRouter.swift */,
+			);
+			path = ArticleSourceList;
+			sourceTree = "<group>";
+		};
 		5F978DC620D6CC4D006976D4 /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +468,7 @@
 			files = (
 				5F7F572420D0BF71005F86A5 /* ArticleService.swift in Sources */,
 				5F75963F20E0656200D2C393 /* SourceListInteractor.swift in Sources */,
+				5F8DF24E20EB1BB7002E09EA /* ArticleSourceListRouter.swift in Sources */,
 				5F75964520E0876700D2C393 /* SourceCell.swift in Sources */,
 				5F70F94B20D9C023000E9C8D /* SearchListVC.swift in Sources */,
 				5F3F707020E3336F00A17438 /* CategoryCell.swift in Sources */,
@@ -460,15 +481,18 @@
 				5F75963D20E061BB00D2C393 /* SourceMapper.swift in Sources */,
 				5FC1A0B420E1E62400E93184 /* HeadlineFilterVC.swift in Sources */,
 				5F75964120E0657500D2C393 /* SourceListPresenter.swift in Sources */,
+				5F8DF24A20EB1B93002E09EA /* ArticleSourceListInteractor.swift in Sources */,
 				5F75963B20E05E8F00D2C393 /* SourceService.swift in Sources */,
 				5F73C75720E5B46100335572 /* UIViewControllerExtensions.swift in Sources */,
 				5F6C483B20D9EFC9009BEF8C /* BookmarkListVC.swift in Sources */,
 				5F7F570720D0BA34005F86A5 /* HeadlineListVC.swift in Sources */,
 				5F7F570520D0BA34005F86A5 /* AppDelegate.swift in Sources */,
 				5F7F571820D0BB56005F86A5 /* Article.swift in Sources */,
+				5F8DF24C20EB1BA3002E09EA /* ArticleSourceListPresenter.swift in Sources */,
 				5F73C75920E5BA0500335572 /* UICollectionViewCellExtensions.swift in Sources */,
 				5F41E57220D2137400AB1B75 /* HeadlineListPresenter.swift in Sources */,
 				5F6C483520D9E978009BEF8C /* UIColorExtensions.swift in Sources */,
+				5F8DF24820EB1B7E002E09EA /* ArticleSourceListVC.swift in Sources */,
 				5F0D9E7B20DC68AC003ED6ED /* UITableViewExtensions.swift in Sources */,
 				5F70F94E20D9C85C000E9C8D /* AppTabBarController.swift in Sources */,
 				5F978DC820D6CC86006976D4 /* ArticleCell.swift in Sources */,
