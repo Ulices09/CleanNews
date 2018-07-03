@@ -53,8 +53,18 @@ class SourceCell: UICollectionViewCell {
     
     private func setupViews() {
         
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.primaryColor.cgColor
+        contentView.layer.cornerRadius = 2.0
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.primaryColor.cgColor
+        contentView.layer.masksToBounds = true
+        
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        layer.shadowRadius = 2.0
+        layer.shadowOpacity = 0.4
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+        layer.backgroundColor = UIColor.white.cgColor
         
         contentView.addSubview(nameLabel)
         contentView.addSubview(categoryLabel)
