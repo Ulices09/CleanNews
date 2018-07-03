@@ -20,6 +20,7 @@ class SourceListVC: UIViewController {
     var interactor: SourceListBusinessLogic!
     
     var sources: [Source] = []
+    var filteredSources: [Source] = []
     var showedCellIndexes: [IndexPath] = []
     
     private var sourcesCollectionView: UICollectionView = {
@@ -55,12 +56,19 @@ class SourceListVC: UIViewController {
     private func setupViews() {
         title = "Sources"
         setupNavigationBar()
+        setupSearchController()
         setupCollectionView()
     }
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
-        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+    }
+    
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
         
         if let searchTextField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
             if let backgroundview = searchTextField.subviews.first {
@@ -69,8 +77,6 @@ class SourceListVC: UIViewController {
                 backgroundview.clipsToBounds = true
             }
         }
-        
-        navigationItem.searchController = searchController
     }
     
     private func setupCollectionView(){
@@ -92,6 +98,7 @@ class SourceListVC: UIViewController {
 extension SourceListVC: SourceListDisplayLogic {
     func displaySources(_ sources: [Source]) {
         self.sources.append(contentsOf: sources)
+        filteredSources = self.sources
         sourcesCollectionView.reloadData()
     }
     
@@ -108,24 +115,31 @@ extension SourceListVC: SourceListDisplayLogic {
     }
 }
 
-extension SourceListVC: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("searchBarCancelButtonClicked")
+extension SourceListVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        let searchText = searchController.searchBar.text!
+        
+        if searchText.isEmpty {
+           filteredSources = sources
+        } else {
+            filteredSources = sources.filter({ (source: Source) -> Bool in
+                return source.name.lowercased().contains(searchText.lowercased())
+            })
+        }
+        
+        sourcesCollectionView.reloadData()
     }
 }
 
 extension SourceListVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sources.count
+        return filteredSources.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = sourcesCollectionView.dequeueReusableCell(withReuseIdentifier: SourceCell.defaultReuseIdentifier, for: indexPath) as! SourceCell
-        let source = sources[indexPath.row]
+        let source = filteredSources[indexPath.row]
         cell.setupData(source: source)
         return cell
     }
