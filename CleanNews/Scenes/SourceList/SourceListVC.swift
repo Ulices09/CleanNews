@@ -18,6 +18,7 @@ protocol SourceListDisplayLogic: class {
 class SourceListVC: UIViewController {
     
     var interactor: SourceListBusinessLogic!
+    var router: SourceListRoutingLogic!
     
     var sources: [Source] = []
     var filteredSources: [Source] = []
@@ -45,12 +46,14 @@ class SourceListVC: UIViewController {
         let interactor = SourceListInteractor()
         let presenter = SourceListPresenter()
         let serviceWorker = SourceService()
+        let router = SourceListRouter()
         
         viewController.interactor = interactor
         interactor.presenter = presenter
         interactor.serviceWorker = serviceWorker
         presenter.viewController = viewController
-        
+        viewController.router = router
+        router.viewController = viewController
     }
     
     private func setupViews() {
@@ -146,6 +149,10 @@ extension SourceListVC: UICollectionViewDataSource {
 }
 
 extension SourceListVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let source = filteredSources[indexPath.row]
+        router.navigateToArticleList(source: source)
+    }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         

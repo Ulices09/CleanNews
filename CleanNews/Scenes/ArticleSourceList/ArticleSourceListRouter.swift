@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+protocol ArticleSourceListRoutingLogic: class {
+    func navigateToArticleWebDetail(articleUrl: String)
+}
+
+class ArticleSourceListRouter: ArticleSourceListRoutingLogic {
+    
+    weak var viewController: ArticleSourceListVC?
+    
+    func navigateToArticleWebDetail(articleUrl: String) {
+        let articleWebDetailVC = ArticleWebDetailVC()
+        articleWebDetailVC.articleUrl = articleUrl
+        viewController?.navigationController?.pushViewController(articleWebDetailVC, animated: true)
+    }
+}

@@ -8,15 +8,18 @@
 
 import Foundation
 
-protocol SourceListRoutingProtocol: class {
-    func navigateToArticleList(sourceId: String)
+protocol SourceListRoutingLogic: class {
+    func navigateToArticleList(source: Source)
 }
 
-class SourceListRouter: SourceListRoutingProtocol {
+class SourceListRouter: SourceListRoutingLogic {
     
     weak var viewController: SourceListVC?
     
-    func navigateToArticleList(sourceId: String) {
-        
+    func navigateToArticleList(source: Source) {
+        let articleSourceListVC = ArticleSourceListVC()
+        articleSourceListVC.sourceId = source.id
+        articleSourceListVC.sourceName = source.name
+        viewController?.navigationController?.pushViewController(articleSourceListVC, animated: true)
     }
 }
